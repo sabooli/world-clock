@@ -1,6 +1,6 @@
 body {
   background-color: #bdb3d4;
-  font-family: Cerebri Sans;
+  font-family: "Cerebri Sans";
 }
 .container {
   margin: 120px auto;
@@ -10,4 +10,7 @@ body {
 }
 ul {
   list-style: none;
+}
+span {
+  font-size: 70%;
 }
