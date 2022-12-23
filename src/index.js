@@ -1,5 +1,4 @@
 let now = new Date();
-let date = now.getDate();
 let year = now.getFullYear();
 let months = [
   "January",
@@ -16,17 +15,16 @@ let months = [
   "December",
 ];
 let month = months[now.getMonth()];
-function ordinalDate() {
-  let date = now.getDate();
-  if (date === 1 || date % 10 === 1) {
-    return now.getDate() + `st`;
-  } else if (date === 2 || date % 10 === 2) {
-    return now.getDate() + `nd`;
-  } else if (date === 3 || date % 10 === 3) {
-    return now.getDate() + `rd`;
-  } else {
-    return now.getDate() + `th`;
-  }
+
+let date = now.getDate();
+if (date === 1 || date === 21 || date === 31) {
+  date = date + `st`;
+} else if (date === 2 || date === 22) {
+  date = date + `nd`;
+} else if (date === 3 || date === 23) {
+  date = date + `rd`;
+} else {
+  date = date + `th`;
 }
 
 function displayTime() {
@@ -81,5 +79,10 @@ function displayTime() {
         `;
 }
 
-ordinalDate();
+function search(city) {
+  let apiKey = "ec683a89-7ab8-43f3-af0e-1d01ff62c161";
+  let apiUrl = `https://api.geekflare.com/loadtime`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTime);
+}
+
 displayTime();

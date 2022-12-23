@@ -6,6 +6,7 @@ body {
   margin: 120px auto;
   max-width: 600px;
   padding: 40px;
+  border: solid 1px black;
   background-color: rgb(250, 250, 250);
 }
 ul {
